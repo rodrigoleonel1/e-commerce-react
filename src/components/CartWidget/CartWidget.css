@@ -1,0 +1,15 @@
+.cart{
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.cart img{
+    width: 25px;
+}
+.cart span{
+    background-color: #d2691e;
+    border-radius: 50%;
+    padding: 3px 5px;
+    min-width: 15px;
+}

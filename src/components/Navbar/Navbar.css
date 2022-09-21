@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');  /* font-family: 'Kumbh Sans', sans-serif; */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #000;
+}
+.logo p{
+    display: flex;
+    font-weight: 900;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+}
+.logo p:hover{
+    color: #d2691e;
+}
+.logo p span{
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.navMenu{
+    display: flex;
+    gap: 20px;
+}
+.navMenu button{
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #000;
+}
+.navMenu button:hover{
+    color: #d2691e;
+}
