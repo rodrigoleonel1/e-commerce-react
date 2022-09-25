@@ -1,11 +1,11 @@
 import CartWidget from '../CartWidget/CartWidget'
-import './Navbar.css'
+import './Navbar.scss'
 
 const Navbar = () =>{
     return(
         <nav>
             <div className="logo">
-                <p>snk<span>Shop</span></p>
+                <p>sneakers<span>Store</span></p>
             </div>
             <div className="navMenu">
                 <button>Nike</button>
