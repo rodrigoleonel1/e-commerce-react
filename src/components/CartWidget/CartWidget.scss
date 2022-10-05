@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../App.scss";
 
 .cart{
     color: $white;
@@ -9,9 +9,10 @@
         width: 25px;
     }
     span{
-        background-color: $main-color;
+        background-color: $orange;
         border-radius: 50%;
         padding: 5px;
         min-width: 30px;
+        text-align: center;
     }
 }

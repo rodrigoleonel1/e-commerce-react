@@ -1,0 +1,44 @@
+@import "../../App.scss";
+
+.itemCount{
+    display: flex;
+    gap: 20px;
+    .itemAmount{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+        border-radius: 5px;
+        border: $orange 1px solid;
+        .count{
+            text-align: center;
+            min-width: 20px;
+            font-weight: 500;
+        }
+        .countBtn{
+            margin-top: -3px;
+            color: $orange;
+            border: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            background-color: $white;
+        }
+    }
+    .addCart{
+        color: $white;
+        background-color: $orange;
+        padding: 10px 30px;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        min-width: 200px;
+        max-height: 40px;
+        cursor: pointer;
+        &:hover{
+            background-color: $orange-hover;
+        }
+    }
+}

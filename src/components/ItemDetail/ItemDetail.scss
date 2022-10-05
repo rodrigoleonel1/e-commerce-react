@@ -1,0 +1,44 @@
+@import "../../App.scss";
+
+.itemDetail{
+    display: flex;
+    margin: 0px 100px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    .imgDetailContainer{
+        max-width: 50%;
+        img{
+            max-width: 600px;
+        }
+    }
+    .itemDescription{
+        max-width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        h1{
+            font-size: 1.5em;
+        }
+        h2{
+            text-transform: uppercase;
+            font-size: 1em;
+            color: $orange;
+            &:hover{
+                color: $black;
+            }
+        }
+        h3{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+            span{
+                font-size: 0.5em;
+                color: $orange;
+                font-weight: lighter;
+            }
+        }
+    }
+}

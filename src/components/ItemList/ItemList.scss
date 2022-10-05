@@ -1,0 +1,8 @@
+@import "../../App.scss";
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+    max-width: 1440px;
+}
