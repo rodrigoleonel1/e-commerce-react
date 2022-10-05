@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Page navigability preview
 
-[Navigability gif](./src/assets/page-navigability.gif)
+![Navigability gif](./src/assets/page-navigability.gif)
 
 ## Available Scripts
 
