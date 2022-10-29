@@ -2,18 +2,18 @@ import './ItemCount.scss'
 import cart from '../CartWidget/assets/cart.svg'
 import { useState } from 'react'
 
-const ItemCount = ({stock}) =>{
+const ItemCount = ({stock = 0, initial = 1, onAdd}) =>{
     
-    const [count, setCount] = useState(0)
+    const [quantity, setQuantity] = useState(initial)
 
     const incrementCount = () => {
-        if (count < stock){
-            setCount(count + 1)
+        if (quantity < stock){
+            setQuantity(quantity + 1)
         }
     }
     const decrementCount = () => {
-        if(count > 0) {
-            setCount(count - 1)
+        if(quantity > 1) {
+            setQuantity(quantity - 1)
         }
     }
 
@@ -21,10 +21,10 @@ const ItemCount = ({stock}) =>{
         <div className="itemCount">
             <div className="itemAmount">
                 <button className='countBtn' onClick={decrementCount}>-</button>
-                <p className='count'>{count}</p>
+                <p className='count'>{quantity}</p>
                 <button className='countBtn' onClick={incrementCount}>+</button>
             </div>            
-            <button className="addCart">
+            <button className="addCart" onClick={()=> onAdd(quantity)}>
                 <img src={cart} alt='cart'/>
                 <p>Agregar al carrito</p>
             </button>

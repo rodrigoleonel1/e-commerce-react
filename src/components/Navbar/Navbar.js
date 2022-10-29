@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import './Navbar.scss'
 
@@ -9,10 +9,9 @@ const Navbar = () =>{
                 <Link to={'/'}><p>sneakers</p></Link>
             </div>
             <div className="navMenu">
-                <Link to={'category/nike'}><button>Nike</button></Link>
-                <Link to={'category/adidas'}><button>Adidas</button></Link>
-                <Link to={'category/puma'}><button>Puma</button></Link>
-                <Link to={'category/jordan'}><button>Jordan</button></Link>
+                <NavLink to={'category/nike'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Nike</NavLink>
+                <NavLink to={'category/adidas'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Adidas</NavLink>
+                <NavLink to={'category/puma'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Puma</NavLink>
             </div>
             <CartWidget/>                      
         </nav>

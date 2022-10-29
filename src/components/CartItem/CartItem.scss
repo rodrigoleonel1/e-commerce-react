@@ -1,0 +1,44 @@
+@import "../../App.scss";
+
+.cartItemCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 50px;
+    .cartItemImg{
+        img{
+            max-width: 200px;
+        }
+    }
+    .cartItemContent{
+        display: flex;
+        flex-direction: column;
+        min-width: 500px;
+        gap: 10px;
+        .cartItemTitle{
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $black;
+            &:hover{
+                color: $orange;
+            }
+        }
+        .cartItemInfo{
+            font-weight: 700;
+        }
+    }
+    .cartItemButton{
+        background-color: $black;
+        color: $white;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        svg{
+            font-size: 20px;
+        }
+        &:hover{
+            color: $orange;
+        }
+    }
+}

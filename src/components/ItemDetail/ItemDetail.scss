@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    min-height: 80vh;
     .imgDetailContainer{
         max-width: 50%;
         img{
@@ -37,7 +38,19 @@
             span{
                 font-size: 0.5em;
                 color: $orange;
-                font-weight: lighter;
+            }
+        }
+        .buyOptionsContainer{
+            display: flex;
+            gap: 10px;
+            .buyOptions{
+                background-color: $black;
+                color: $white;
+                border-radius: 5px;
+                padding:  10px 20px;
+                &:hover{
+                    color: $orange;
+                }
             }
         }
     }

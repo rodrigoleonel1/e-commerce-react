@@ -2,19 +2,34 @@ import './App.scss';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Navbar from './components/Navbar/Navbar';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
+import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { CartContextProvider } from './context/CartContext'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting ={'Bienvenidos a sneakers store'}/>}/>
-          <Route path='/category/:categoryId'element={<ItemListContainer greeting ={'Bienvenidos a sneakers store'}/>}/>
-          <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
-        </Routes>  
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Navbar/>
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting ={'Bienvenido a sneakers store'}/>}/>
+            <Route path='/category/:categoryId'element={<ItemListContainer greeting ={'Productos '}/>}/>
+            <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+            <Route path='/cart' element={<Cart/>} />
+            <Route path='/checkout' element={<Checkout/>} />
+            <Route path='*' element={<ErrorPage/>}/>
+          </Routes>  
+          <Footer/>
+        </BrowserRouter>
+        <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
+      </CartContextProvider>
     </div>
   );
 }
