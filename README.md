@@ -1,6 +1,6 @@
 # Ecommerce sneakers.
 
-Este es un proyecto basado en un Ecommerce de zapatillas 
+Este es un proyecto basado en un Ecommerce de zapatillas para el curso de React JS de Coderhouse.
 
 ## Page navigability preview
 
@@ -12,10 +12,10 @@ Es un proyecto realizado con create-react-app
 
 # Dependencias extras
 
-Sass: utilizada para dar estilos a los componentes.
-Firebase: utilizado como Backend del proyecto.
-react-router-dom: utilizado para darle navegabilidad al proyecto.
-react-toastify y sweetalert2: se utilizan para mostrar notificaciones en pantalla y generar una mejor experiencia de usuario.
+- Sass: utilizada para dar estilos a los componentes.
+- Firebase: utilizado como Backend del proyecto.
+- react-router-dom: utilizado para darle navegabilidad al proyecto.
+- react-toastify y sweetalert2: se utilizan para mostrar notificaciones en pantalla y generar una mejor experiencia de usuario.
 
 # Pasos para la instalación del proyecto
 
