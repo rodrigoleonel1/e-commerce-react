@@ -1,15 +1,19 @@
 import './Checkout.scss'
-import { useContext, useState } from 'react'
+import Loader from '../Loader/Loader'
+import Form from '../Form/Form'
+import Swal from 'sweetalert2'
+import { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { getDocs, addDoc, collection, where, query, documentId, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 import { toast } from 'react-toastify';
-import Loader from '../Loader/Loader'
-import Form from '../Form/Form'
 import { useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2'
 
 const Checkout = () => {
+
+    useEffect(() =>{
+        document.title = `Checkout | Sneakers Store` // eslint-disable-next-line
+    }, [])
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)

@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../services/firebase';
 import './ItemDetailContainer.scss';
 import Loader from "../Loader/Loader";
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import { getProductsById } from '../../services/firebase/firestore';
 
 const ItemDetailContainer = ({setCart}) =>{
 
@@ -13,12 +13,12 @@ const ItemDetailContainer = ({setCart}) =>{
     const {productId} = useParams()
 
     useEffect(() => {
-        const docRef = doc(db, 'products', productId)
-        getDoc(docRef).then(doc => {
-            const data = doc.data()
-            const productsAdapted = {id: doc.id, ...data}
-            setProduct(productsAdapted)
-        }).finally(()=>{
+        setLoading(true)
+        getProductsById(productId).then(product =>{
+            setProduct(product)
+        }).catch(error =>{
+            toast.error(`${error}`)
+        }).finally(() =>{
             setLoading(false)
         })
     },[productId])

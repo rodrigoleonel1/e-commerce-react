@@ -1,6 +1,6 @@
 import './Cart.scss'
 import CartItem from '../CartItem/CartItem'
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import { BsFillCartXFill } from 'react-icons/bs'
@@ -8,6 +8,11 @@ import { FaTrashAlt, FaCheck  } from 'react-icons/fa'
 
 
 const Cart = () => {
+
+    useEffect(() =>{
+        document.title = `Carrito | Sneakers Store` 
+    }, [])
+
     const { cart, clearCart, totalQuantity, total} = useContext(CartContext)  
 
     if(totalQuantity === 0) {

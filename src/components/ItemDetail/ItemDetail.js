@@ -1,10 +1,14 @@
 import './ItemDetail.scss';
-import { Link } from 'react-router-dom'
-import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom'
+import { useState, useContext, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ id, free_shipping, name, img, category, description, price, stock}) =>{
+
+    useEffect(() =>{
+        document.title = `${name} | Sneakers Store` // eslint-disable-next-line
+    }, [])
 
     const [quantityToAdd, setQuantityToAdd] = useState(0)
     const { addItem, getProductQuantity } = useContext(CartContext)

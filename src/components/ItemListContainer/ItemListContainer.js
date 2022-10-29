@@ -1,10 +1,10 @@
-import { useState ,useEffect } from "react"
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from '../../services/firebase'
-import { useParams } from "react-router-dom";
+import './ItemListContainer.scss';
 import Loader from "../Loader/Loader";
 import ItemList from "../ItemList/ItemList";
-import './ItemListContainer.scss';
+import { useState ,useEffect } from "react"
+import { useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+import { getProducts } from "../../services/firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
 
@@ -14,17 +14,22 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         setLoading(true)
-        const collectionRef = categoryId ? query(collection (db, 'products'), where('category', '==', categoryId)) : collection (db, 'products')
-        getDocs(collectionRef).then(response =>{
-            const productsAdapted = response.docs.map(doc =>{
-                const data = doc.data()
-                return { id: doc.id, ...data}
-            })
-            setProducts(productsAdapted)
+
+        getProducts(categoryId).then(products =>{
+            setProducts(products)
+        }).catch(error =>{
+            toast.error(`${error}`)
         }).finally(() =>{
             setLoading(false)
-        })
-    },[categoryId])
+        })},[categoryId])
+
+    useEffect(() =>{
+        if(categoryId){
+            document.title = `${categoryId.toUpperCase()} | Sneakers Store`
+        } else{
+            document.title = `Sneakers Store`
+        }
+    }, [categoryId])
 
     if(loading){
         return(<Loader/>)
